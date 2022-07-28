@@ -1,4 +1,4 @@
-import { Point } from './point';
+// import { Point } from './point';
 
 // TS code is compiled in es5 JS which means there is no let and const in compiled js code
 /////////////////////////////// TYPES
@@ -197,5 +197,6 @@ import { Point } from './point';
 
 ////////////////////// Modules
 
-const point = new Point(1, 2);
-point.draw();
+// const point = new Point(1, 2);
+// point.draw();
+

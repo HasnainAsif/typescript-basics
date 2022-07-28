@@ -1,3 +1,4 @@
+// import { Point } from './point';
 // TS code is compiled in es5 JS which means there is no let and const in compiled js code
 /////////////////////////////// TYPES
 // let a: number;
@@ -133,33 +134,40 @@
 // console.log('Updated x is: ' + newX);
 ////////////////////// Property (Get and Set)
 //// we can write above code using Get and Set properties and can access those as values despite of getX, setX methods
-var Point = /** @class */ (function () {
-    function Point(x, y) {
-        this.x = x;
-        this.y = y;
+// class Point {
+//   constructor(private x?: number, private y?: number) {}
+//   draw() {
+//     console.log(`X: ${this.x}, Y: ${this.y}`);
+//   }
+//   // we call get and set as property
+//   // we can call it as getter method
+//   get X() {
+//     return this.x;
+//   }
+//   // we can call it as setter method
+//   set X(value: number) {
+//     if (value < 0) throw new Error('Value cannot be less than 0');
+//     this.x = value;
+//   }
+// }
+// // Now, we cannot access x and y outside the class as they are private i.e. point object cannot access it as point.x and point.y
+// let point = new Point(1, 2);
+// point.draw();
+// let x = point.X;
+// console.log('x is: ' + x);
+// point.X = 4;
+// let newX = point.X;
+// console.log('Updated x is: ' + newX);
+////////////////////// Modules
+// const point = new Point(1, 2);
+// point.draw();
+/////////////////////
+var person = {
+    a: 'asd',
+    b: function () {
+        setTimeout(function () {
+            console.log(this.a);
+        }.bind(this), 0);
     }
-    Point.prototype.draw = function () {
-        console.log("X: " + this.x + ", Y: " + this.y);
-    };
-    Object.defineProperty(Point.prototype, "X", {
-        get: function () {
-            return this.x;
-        },
-        set: function (value) {
-            if (value < 0)
-                throw new Error('Value cannot be less than 0');
-            this.x = value;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    return Point;
-}());
-// Now, we cannot access x and y outside the class as they are private i.e. point object cannot access it as point.x and point.y
-var point = new Point(1, 2);
-point.draw();
-var x = point.X;
-console.log('x is: ' + x);
-point.X = 5;
-var newX = point.X;
-console.log('Updated x is: ' + newX);
+};
+person.b();
